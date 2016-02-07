@@ -12,7 +12,7 @@ web:
         bash -c "npm prune &&
             npm install --no-bin-links &&
             (grunt &) &&
-            cd app && nodemon -L server.js"
+            cd app && nodemon -L server.coffee"
 
 redis:
     restart: always
