@@ -1,7 +1,7 @@
 ReactDOM = require 'react-dom'
 React = require 'react'
 $ = require 'jquery'
-Square = require '../components/square'
+Square = require '../../components/square'
 
 square = React.createFactory Square
 outlet = document.getElementById 'react-outlet'

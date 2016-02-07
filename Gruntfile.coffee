@@ -1,12 +1,20 @@
+{modules} = require './app/config'
+
 module.exports = (grunt) ->
+
+    # generate files from modules array
+    browserify_files = {}
+    for module in modules
+        do (module) ->
+            browserify_files["public/modules/#{module}.js"] =
+                ["app/modules/#{module}/client.coffee"]
 
     # Project configuration
     grunt.initConfig
         pkg: grunt.file.readJSON 'package.json'
         browserify:
             dev:
-                files:
-                    'public/home.js': ['app/views_client/home.coffee']
+                files: browserify_files
                 options:
                     transform: ['coffeeify']
                     plugin: ['coffeeify']
