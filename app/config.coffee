@@ -4,4 +4,7 @@ module.exports =
     ],
     apis: [
         'square'
+    ],
+    helpers: [
+        'cdn'
     ]
