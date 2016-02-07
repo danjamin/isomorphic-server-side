@@ -1,10 +1,10 @@
 ReactDOMServer = require 'react-dom/server'
 React = require 'react'
-redis = require 'redis'
+
 Square = require '../../components/square'
+{client} = require '../../services/redis'
 
 square = React.createFactory Square
-client = redis.createClient 'redis://redis:6379'
 
 module.exports = (app) ->
     app.get '/', (req, res) ->

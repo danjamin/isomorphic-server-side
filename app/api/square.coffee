@@ -1,5 +1,4 @@
-redis = require 'redis'
-client = redis.createClient 'redis://redis:6379'
+{client} = require '../services/redis'
 
 module.exports = (app) ->
     app.post '/api/square', (req, res) ->
