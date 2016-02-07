@@ -1,0 +1,21 @@
+web:
+    restart: always
+    build: .
+    ports:
+        - "8000-8001:8000-8001"
+    volumes:
+        - .:/usr/src/app
+    env_file: .env
+    links:
+        - redis
+    command: >
+        bash -c "npm prune &&
+            npm install --no-bin-links &&
+            (grunt &) &&
+            cd app && nodemon -L server.js"
+
+redis:
+    restart: always
+    image: redis
+    ports:
+        - "6379"
