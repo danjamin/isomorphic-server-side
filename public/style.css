@@ -9,7 +9,11 @@ footer {
     font-weight: bold;
 }
 
-.square {
+section {
+    margin: 10px 0;
+}
+
+.shape {
     border: 1px solid black;
     width: 100px;
     height: 100px;
@@ -22,4 +26,12 @@ footer {
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
     cursor: pointer;
+}
+
+.square {
+    /* nothing yet */
+}
+
+.circle {
+    border-radius: 61px;
 }

@@ -7,14 +7,14 @@ Square = require '../../components/square'
 square = React.createFactory Square
 
 module.exports = (app) ->
-    app.get '/', (req, res) ->
+    app.get '/square', (req, res) ->
         client.get "square:click_count", (err, reply) ->
             reply = if reply? then parseInt reply, 10 else 0
             data = count: reply
             html = ReactDOMServer.renderToString square(data)
-            res.render 'home/index',
+            res.render 'square/index',
                 outlet:
                     html: html
                     data: data
                 title: 'Square'
-                scripts: ['/modules/home.js']
+                scripts: ['/modules/square.js']

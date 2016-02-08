@@ -1,19 +1,8 @@
-React = require 'react'
+Shape = require './shape'
 
-{ div } = React.DOM
-
-class Square extends React.Component
-    render: ->
-        div
-            className: "square"
-            onClick: @handleClick.bind(this)
-            @props.count
-
-    handleClick: (evt) ->
-        @props.onClick evt, @props.count + 1
-
-Square.propTypes =
-    onClick: React.PropTypes.func
-    count: React.PropTypes.number.isRequired
+class Square extends Shape
+    constructor: (props) ->
+        super props
+        @className += " square"
 
 module.exports = Square

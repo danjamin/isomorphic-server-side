@@ -1,9 +1,12 @@
 module.exports =
     modules: [
-        'home'
+        'index',
+        'square',
+        'circle'
     ],
     apis: [
-        'square'
+        'square',
+        'circle'
     ],
     helpers: [
         'cdn',
