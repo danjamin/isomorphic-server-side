@@ -12,4 +12,8 @@ module.exports = (app) ->
             reply = if reply? then parseInt reply, 10 else 0
             data = count: reply
             html = ReactDOMServer.renderToString square(data)
-            res.render 'home/index', outlet: html, data: data
+            res.render 'home/index',
+                outlet: html
+                data: data
+                title: 'Square'
+                scripts: ['/modules/home.js']

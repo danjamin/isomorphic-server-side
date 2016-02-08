@@ -45,6 +45,16 @@ a change will trigger a rebuild of client side code and server side when necessa
 No need to manually restart the docker container -- unless something strange happens.
 
 
+## Generating vendor.js
+
+Every once in a while, an external dependency will need updating locally.
+To generate `public/vendor.js`
+
+```
+$ docker exec -it isomorphicserverside_web_1 bash
+# grunt browserify:vendor
+```
+
 ## Debugging server side web
 
 First, you will want to run a separate server in the foreground where you have full control.

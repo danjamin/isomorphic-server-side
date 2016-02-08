@@ -1,6 +1,8 @@
 {modules} = require './app/config'
 
 module.exports = (grunt) ->
+    # setup "external" deps
+    external = ['react', 'react-dom', 'jquery']
 
     # generate files from modules array
     browserify_files = {}
@@ -13,6 +15,12 @@ module.exports = (grunt) ->
     grunt.initConfig
         pkg: grunt.file.readJSON 'package.json'
         browserify:
+            # used to create vendor.js
+            vendor:
+                files:
+                    'public/vendor.js': external
+                options:
+                    require: external
             dev:
                 files: browserify_files
                 options:
@@ -20,6 +28,7 @@ module.exports = (grunt) ->
                     plugin: ['coffeeify']
                     watch: true
                     keepAlive: true
+                    external: external
                     browserifyOptions:
                         debug: true
                         extensions: '.coffee'
