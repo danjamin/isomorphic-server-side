@@ -4,7 +4,7 @@ $ = require 'jquery'
 Square = require '../../components/square'
 
 square = React.createFactory Square
-outlet = document.getElementById 'react-outlet'
+outlet = document.getElementById 'outlet'
 
 handleClick = (evt, count) ->
     $.post '/api/square', {}
@@ -14,5 +14,5 @@ render = (props) ->
     props.onClick = handleClick
     ReactDOM.render square(props), outlet
 
-data = $(outlet).data 'top'
+data = $(outlet).data 'outlet'
 render data

@@ -17,6 +17,7 @@ setup_views = (app, extension) ->
     config = exphbs
         defaultLayout: 'main'
         layoutsDir: "#{cwd}/layouts"
+        partialsDir: "#{cwd}/partials"
         helpers: helper_config
         extname: extension
     app.engine extension, config

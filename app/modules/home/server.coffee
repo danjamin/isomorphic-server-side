@@ -13,7 +13,8 @@ module.exports = (app) ->
             data = count: reply
             html = ReactDOMServer.renderToString square(data)
             res.render 'home/index',
-                outlet: html
-                data: data
+                outlet:
+                    html: html
+                    data: data
                 title: 'Square'
                 scripts: ['/modules/home.js']
