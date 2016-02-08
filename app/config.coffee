@@ -6,5 +6,6 @@ module.exports =
         'square'
     ],
     helpers: [
-        'cdn'
+        'cdn',
+        'json'
     ]

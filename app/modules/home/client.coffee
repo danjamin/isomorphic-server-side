@@ -6,13 +6,13 @@ Square = require '../../components/square'
 square = React.createFactory Square
 outlet = document.getElementById 'react-outlet'
 
+handleClick = (evt, count) ->
+    $.post '/api/square', {}
+        .then (res) -> render count: res.count
+
 render = (props) ->
     props.onClick = handleClick
     ReactDOM.render square(props), outlet
 
-$.get '/api/square'
-    .then (res) -> render count: res.count
-
-handleClick = (evt, count) ->
-    $.post '/api/square', {}
-        .then (res) -> render count: res.count
+data = $(outlet).data 'top'
+render data
