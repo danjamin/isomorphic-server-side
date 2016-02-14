@@ -1,3 +1,7 @@
+# DEPRECATED
+
+See [portfolio-isomorphic](//github.com/danjamin/portfolio-isomorphic)
+
 # isomorphic-server-side
 
 An example of isomorphic react; server side heavy
